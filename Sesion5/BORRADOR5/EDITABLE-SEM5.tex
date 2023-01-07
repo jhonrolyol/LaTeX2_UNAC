@@ -1,0 +1,166 @@
+\documentclass[12pt,a4paper]{article}
+\input{paquetes.tex}
+
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{pgf-pie}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+ backgroundcolor=\color{backcolour},   
+ commentstyle=\color{codegreen},
+ keywordstyle=\color{magenta},
+ numberstyle=\tiny\color{codegray},
+ stringstyle=\color{codepurple},
+ identifierstyle=\color{blue},
+ basicstyle=\ttfamily\footnotesize,
+ breakatwhitespace=false,         
+ breaklines=true,                 
+ captionpos=b,                    
+ keepspaces=true,
+ numbers=left,                    
+ numbersep=5pt,                  
+ showspaces=false,                
+ showstringspaces=false,
+ showtabs=false,                  
+ tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\begin{document}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\input{chapter0.tex}
+\newpage
+\input{chapter1.tex}
+\newpage
+\input{chapter2.tex}
+\newpage
+\input{chapter3.tex}
+\newpage
+\part{Insertar código en \LaTeX}
+\section{Paquete \textit{listings}}
+\subsection*{Insertar tu propio código utilizando el paquete \textit{listings}}
+Este paquete ordena los códigos con el siguiente entorno, el cual permite tambien introducir el código en el mismo documento:
+\begin{lstlisting}
+%Personalizacion
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolario}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definicion}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Comentario}
+\end{lstlisting}
+Pero también podemos incluir el propio archivo, previamente colocado en la misma carpeta de origen, sin necesidad de tener que escribir nada mas que el siguiente comando:
+\lstinputlisting{Peonza.py}
+Dependiendo del tipo de código en el que estemos trabajando será posible indicar este para darle una cierta personalización.
+\lstinputlisting[language=Python]{Peonza.py}
+Y también poder indicar cierto sector del código:
+\lstinputlisting[language=Python, firstline=32, lastline=38]{Peonza.py}
+Se puede usar los siguientes tipos de lenguajes:\\
+{\bf ABAP, ACSL, Ada, Algol, Ant, Assembler, Awk, bash, Basic, C\#, C++, C, Caml, Clean, Cobol, Comal, csh, Delphi, Eiffel, Elan, erlang, Euphoria, Fortran, GCL, Go (golang), Gnuplot, Haskell, HTML, IDL, inform, Java, JVMIS, ksh, Lisp, Logo, Lua, make, Mathematica, Matlab, Mercury, MetaPost, Miranda, Mizar, ML, Modelica, Modula-2, MuPAD, NASTRAN, Oberon-2, Objective C, OCL, Octave, Oz, Pascal, Perl, PHP, PL/I, Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S, SAS, Scilab, sh, SHELXL, Simula, SQL, tcl, TeX, VBScript, Verilog, VHDL, VRML, XML, XSLT.}
+\subsection*{Ejemplos de codificaciones utilizando el paquete \textit{listings}}
+Tambien podemos utilizar otro tipo de lenguajes:
+\subsubsection*{Código en Scilab}
+\lstinputlisting[language=Scilab]{lyapunov.sce}
+\subsubsection*{Código en Fortran}
+\lstinputlisting[language=Fortran]{ADAMS-MOULTON.f90}
+\subsubsection*{Código en Java}
+\lstinputlisting[language=Java]{ZoomCamera.js}
+\subsubsection*{Código en \LaTeX}
+\lstinputlisting[caption=Código en \LaTeX,language=TeX]{bibliografia2.tex}
+
+\section*{Crear figuras con Tikz}
+Podemos realizar ciertas gráficas en \LaTeX~con ayuda del paquete \textit{tikz}, el cual podremos ver los siguientes resultados:
+\begin{center}
+\begin{tikzpicture}
+\draw[color=blue] (0,0)-- (2,0)-- (1,2)-- (-1,2)-- (0,0);
+\draw[color=red,fill = red!10] (-1.5,-1.5)--(-1.5,1.5)--(1.5,1.5)--(1.5,-1.5)-- (-1.5,-1.5);
+\draw (0,0) circle(1.5);
+\end{tikzpicture}
+\end{center}
+También podemos hacer nuestros propios arcos:
+\begin{center}
+\begin{tikzpicture}
+\draw (2,0) arc (0:180:1);
+\draw (2,0) arc (0:-90:2);
+\draw (2,0) node[right] {$A$};
+\draw (2,0) node {$\bullet$};
+\draw (0,0) node[left] {$O$};
+\draw[color=blue] (0,0) node {$\bullet$};
+\end{tikzpicture}
+\end{center}
+Otro ejemplo:
+\begin{center}
+\begin{tikzpicture}
+\coordinate (O) at (0,0);
+\coordinate (R) at (2,0);
+\coordinate (L) at (-2,0);
+\coordinate (F) at (0,-2.5);
+\draw[line width = 2pt,color = red,fill=red!10] (L)--(F)--(R);
+\draw[line width = 2pt,color = red,fill=red!10] (R) arc (0:180:1);
+\draw[line width = 2pt,color = red,fill=red!10] (O) arc (0:180:1);
+\end{tikzpicture}
+\end{center}
+
+Si vamos a trabajar varias veces con el mismo punto, es recomendable asignarle ya una coordenada en especifico.
+\begin{center}
+\begin{tikzpicture}
+\coordinate (A) at (2,0);
+\coordinate (O) at (0,0);
+\draw (A) arc (0:90:2);
+\draw (A) arc (0:-90:2);
+\draw (A) node[above] {$A$};
+\draw (A) node {$\bullet$};
+\draw (O) node[below] {$O$};
+\draw[color=blue] (O) node {$\bullet$};
+\draw [very thick] (-1,0) -- (A) -- (-4,-3)--(-3,2) -- cycle;
+\draw [line width = 2pt] (A) rectangle (4,-4);
+\draw [dotted] (O) -- (0,2);
+\end{tikzpicture}
+\end{center}
+Tambien podemos trazar vectores:
+\begin{center}
+\begin{tikzpicture}[thick]
+\draw [line width = 1.5pt,fill=cyan] (1,1) rectangle (-1,0);
+\draw [line width = 1pt,fill=gray] (3,0) rectangle (-3,-0.5);
+\draw (0,0.75) node[below] {$m$};
+\draw[arrows=->, ultra thick](1,0.5) -- (2,0.5);
+\draw (2,0.6) node[above] {$\vec{F}$};
+\end{tikzpicture}
+\end{center}
+\newpage
+Tikz también nos permite poder graficar ciertas funciones con una cantidad especifica de valores.
+\begin{center}
+\begin{tikzpicture}
+\draw[arrows=->, very thick] (-4,0)-- (4,0);
+\draw (4,0) node[right] {$x$};
+\draw [arrows=->, very thick] (0,-3)-- (0,3);
+\draw (0,3) node[above] {$y$};
+%\draw [very thin, gray!30] (-4,-3) grid (4,3);
+\draw [domain=-4:4,samples = 400, blue] plot(\x, { 2*sin(3*\x r) } );
+\draw [domain=-4:4,samples = 400, red] plot(\x, { cos(8*\x r) } );
+\draw[blue] (0.5,1.93) node[above] {$f_{(x)}$};
+\draw[red] (1.6,0.93) node[above] {$g_{(x)}$};
+\draw [domain=-1.8:1.8,samples = 400, green] plot(\x, { \x*\x } );
+\draw[green] (1.5,2) node[right] {$h_{(x)}$};
+\end{tikzpicture}
+\end{center}
+Tambien podemos establecer graficas estadisticas:
+\begin{center}
+\begin{tikzpicture}
+	\pie{10/{NSP}, 20/{Aprobados}, 30/{Retirados},35/{Jalados},5/{Susti con fe}}
+\end{tikzpicture}
+\end{center}
+\newpage
+\input{bibliografia.tex}
+
+\end{document}

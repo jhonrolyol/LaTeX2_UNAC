@@ -1,0 +1,181 @@
+% beautiful title slides in Beamer
+% Model 5
+% latex-beamer.com
+
+\documentclass[aspectratio=169]{beamer}
+
+% Remove navigation bar
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{blocks}[rounded][shadow]
+\usetheme{Madrid}
+\usecolortheme{beaver}
+\usefonttheme{serif}
+% Tikz package
+\usepackage{tikz}
+\usepackage{multicol}
+\usetikzlibrary{positioning}
+\usepackage{listings}
+
+
+
+\begin{document}
+
+% Title slide frame
+\begin{frame}[plain]
+
+\input{configuraciones}
+    
+\end{frame}
+
+
+\begin{frame}{\bf Escritura básica}
+\begin{alertblock}{\bf Espacios en blanco}
+Existen varias formas de colocar espacios en \LaTeX, el más común es el que haces presionando la barra espaciadora, pero es bueno conocer de que otras formas se pueden hacer, los mas comunes son:\begin{itemize}
+\item \textbf{Espacio compilado}: Se genera usando ``$\backslash$'' al lado de un espacio, con ello tenemos el siguiente efecto:
+$$\text{hazme}\backslash\_\backslash\_\backslash\_\text{caso}\Rightarrow\text{hazme}\ \ \ \text{caso}$$
+\item \textbf{Espacio irrompible}: Se genera usando ``$\mathtt{\sim}$'' al lado de un espacio, con ello tenemos el siguiente efecto:
+$$\text{quiero}\mathtt{\sim}\mathtt{\sim}\mathtt{\sim}\text{egresar}\Rightarrow\text{quiero}~~~\text{egresar}$$
+\item \textbf{Espacio especifico}: Para establecer un espacio en especifico (sea en mm o cm) se utiliza el siguiente comando:
+$$\backslash\texttt{hspace}\{\text{número}\}$$
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf Escritura básica}
+\begin{alertblock}{\bf Símbolos prohibidos}
+\LaTeX\ tiene reservado ciertos signos para usos especiales y no pueden ser incluidos en la escritura, por ello el ``$\backslash$'' será tu mejor herramienta contra los siguientes simbolos:
+$$\$\hspace{5mm};\hspace{4mm}\&\hspace{5mm};\hspace{4mm}\%\hspace{5mm};\hspace{4mm}\_\hspace{5mm};\hspace{4mm}\{\hspace{5mm};\hspace{4mm} \}$$
+Pero luego tenemos otros que se necesita de un comando en específico como lo son:
+$$\backslash\text{cdots}\Rightarrow \cdots$$
+$$\backslash\text{backslash}\Rightarrow \backslash$$
+$$\backslash\text{sim}\Rightarrow\;\sim$$
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf Escritura básica}
+\begin{alertblock}{\bf Tamaño de la letra}
+Existen varios tipos de tamaño de letra que \LaTeX\ ofrece, tales como:\begin{center}
+{\tiny tiny}, {\scriptsize scriptsize}, {\footnotesize footnotesize}, {\small small}, {\normalsize normalsize}, {\large large},\\{\Large Large}, {\LARGE LARGE}, {\huge huge}, {\Huge Huge}\end{center}
+Para utilizarlos tendriamo tres forma de hacerlo:\begin{itemize}
+\item \textbf{Entre llaves}: $\{\backslash\text{huge Texto}\}$
+\item \textbf{Comando propio}: $\backslash\text{large\{Texto}\}$
+\item \textbf{Utilizando un entorno}: $\backslash\text{begin}\{\text{scriptsize}\}\hdots \backslash\text{end}\{\text{scriptsize}\}$
+\end{itemize}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf Escritura básica}
+\begin{alertblock}{\bf Forma de la letra}
+Existen varios tipos de formas que puede tomar la letra que \LaTeX\ ofrece, tales como:\begin{center}
+{\bf Negrita} $(\backslash\text{bf})$, {\it Itálica} $(\backslash\text{it})$, {\sl Inclinada} $(\backslash\text{sl})$, {\sc Mayúsculas pequeñas} $(\backslash\text{sc})$
+\end{center}
+\end{alertblock}
+
+\begin{alertblock}{\bf Familia de letras}
+\LaTeX\ ofrece tambien como un cambio de fuente, en este caso se presentarán las que el \LaTeX\ maneja por defecto:\begin{center}
+{\rmfamily Roman} $(\backslash\text{rmfamily})$, {\sffamily Sans Serif} $(\backslash\text{sffamily})$, {\ttfamily Typewriter} $(\backslash\text{ttfamily})$
+\end{center}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf Escritura básica}
+\begin{alertblock}{\bf Justificado}
+\LaTeX\ por defecto justifica el texto por ambos lados, pero si quisiéramos un texto \textbf{centrado}, \textbf{alineado por la izquierda} o \textbf{alineado por la derecha} deberíamos utilizar respectivamente los siguientes comandos:
+$$\backslash\text{begin}\{\text{\bf center}\}\,\cdots\text{ centrado }\cdots\,\backslash\text{end}\{\text{\bf center}\}$$
+$$\backslash\text{begin}\{\text{\bf flushleft}\}\,\cdots\text{ alineado por la izquierda }\cdots\,\backslash\text{end}\{\text{\bf flushleft}\}$$
+$$\backslash\text{begin}\{\text{\bf flushright}\}\,\cdots\text{ alineado por la derecha }\cdots\,\backslash\text{end}\{\text{\bf flushright}\}$$
+\end{alertblock}
+\begin{alertblock}{\bf Salto de párrafo}
+Para hacer un salto de párrafo tenemos comandos como el $\backslash\texttt{\bf par}$ el cual mantiene la sangría, $\backslash\texttt{\bf newline}$ el cual no mantiene la sangría y $\backslash\texttt{\bf linebreak}$ el cual ajusta la linea inicial.
+
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf ¿Cómo establezco los margenes de un documento?}
+Para modificar lo margenes de un documento debemos cargar el paquete \texttt{\bf anysize}, y luego utilizando el siguiente preámbulo.
+
+$$\backslash\texttt{marginsize}\{\text{izquierdo}\}\{\text{derecho}\}\{\text{superior}\}\{\text{inferior}\}$$
+
+\begin{alertblock}{\bf Sangría}
+Para establecer una sangría al documento debemos utilizar el siguiente preámbulo:
+$$\backslash\texttt{setlegth}\{\backslash\texttt{parindent}\}\{\text{distancia}\}$$
+Para quitar la sangría por defecto debemos establecer que la distancia sea 0px.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf ¿Cómo establezco los margenes de un documento?}
+\begin{alertblock}{\bf Interlineado}
+Para modificar el interlineado de un documento debemos cargar el paquete \texttt{\bf setspace}, y luego utilizar cualquiera de las siguientes opciones:
+$$\backslash\texttt{singlespace}$$
+$$\backslash\texttt{onehalfspace}$$
+$$\backslash\texttt{doublespace}$$
+$$\backslash\texttt{spacing}\{\text{número}\}$$
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf Creación de una portada simple}
+Como se puede ver en la caratula de esta presentación \LaTeX\ es muy personalizable aunque no lo parezca, puedes crear una portada para tu tesis como la portada de tu futuro libro, pero por el momento comenzaremos diseñando una portada simple debido a que en otra sesión nos dedicaremos exclusivamente al diseño de una portada, para ello comenzamos estableciendo los siguientes preámbulos:
+$$\backslash\texttt{title}\{\text{título}\}~~~~~~\backslash\texttt{author}\{\text{autor}\}~~~~~~\backslash\texttt{date}\{\text{fecha}\}$$
+Luego dentro del documento debemos colocar la instrucción de $\backslash\text{\bf maketitle}$ el cual generará una pagina exclusiva a la portada.
+
+\begin{alertblock}{\bf ¿Y si tengo varios autores?}
+No hay problema, para separar a varios autores dentro del preámbulo del autor debes utilizar el comando $\backslash\texttt{\bf and}$
+\end{alertblock}
+
+\end{frame}
+
+\begin{frame}{\bf El Abstract}
+El {\bf resumen} o más conocido como el ``{\bf abstract}'' es la parte principal que emboca un articulo, el cual debe resaltar de manera diferente al resto del documento, para ello \LaTeX\ tiene un entorno exclusivo para ello:
+$$\backslash\texttt{begin}\{\text{\bf abstract}\}\;\cdots\text{Resumen}\cdots\;\backslash\texttt{end}\{\text{\bf abstract}\}$$
+En caso quisieras cambiar el titulo del abstract tendrías que utilizar el siguiente preámbulo:
+$$\backslash\texttt{renewcommand}\{\backslash\texttt{abstractname}\}\{\text{Nuevo nombre}\}$$
+
+\end{frame}
+
+\begin{frame}{\bf Secciones de un articulo}
+Cuando se trata de un articulo este se organiza de la siguiente manera:
+$$\backslash\texttt{part}\Rightarrow\text{Parte I, II, }\cdots \hspace{1.5cm};\hspace{1.5cm}\backslash\texttt{section}\Rightarrow\text{Sección 1, 2, }\cdots$$
+$$\backslash\texttt{subsection}\Rightarrow\text{Sección 1.1, 1.2, }\cdots \hspace{0.5cm};\hspace{0.5cm}\backslash\texttt{subsubsection}\Rightarrow\text{Sección 1.1.1, 1.1.2, }\cdots$$
+$$\backslash\texttt{paragraph}\Rightarrow\text{Párrafo} \hspace{2cm};\hspace{2cm}\backslash\texttt{subparagraph}\Rightarrow\text{Subpárrafo}$$
+
+\begin{alertblock}{\bf Índice}
+Para mostrar las partes, secciones, subsecciones, etc. debemos insertar el Índice por medio del comando $\backslash\texttt{\bf tableofcontents}$.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf ¿Cómo citamos e insertamos la bibliografía?}
+Antes de empezar a citar nuestro articulo debemos generar nuestra bibliografía, el cual tendría la siguiente estructura:
+$$\backslash\texttt{begin}\{\texttt{thebibliography}\}\{n\}$$
+$$\backslash\texttt{bibitem}\{\text{Inicial}\}\;\text{Citación}$$
+$$\backslash\texttt{end}\{\texttt{thebibliography}\}$$
+En caso quisieras cambiar el titulo de la bibliografía tendrías que utilizar el siguiente preámbulo:
+$$\backslash\texttt{renewcommand}\{\backslash\texttt{refname}\}\{\text{Nuevo nombre}\}$$
+Ahora podremos libremente citar dentro del \LaTeX\ debemos escribir la siguiente instrucción $\backslash\texttt{cite}\{\text{Inicial}\}$ o $\backslash\texttt{cite}[\text{pp.\ 13-\,-16}]\{\text{Inicial}\}$
+\end{frame}
+
+\begin{frame}{\bf ¿Cómo generar hyperlinks?}
+Los \textbf{hyperlinks} de \LaTeX\ nos es de mucha utilidad para poder hacer que nuestro articulo o libro sea mas interactivo y podamos acceder a la información rápidamente, para empezar debemos agregar el paquete:
+$$\backslash\texttt{usepackage}\{\text{hyperref}\}$$
+\begin{alertblock}{\bf Direccionar secciones}
+Si tu articulo es extenso, lo recomendable es que cuando tengas que recurrir a una sección importante para entender un concepto, o en un libro ir al apéndice puedas acceder rápidamente con tan solo un ``click'', para hacer ello comenzamos etiquetando la sección a dirigir:
+$$\backslash\texttt{section}\{\text{Título}\}\color{red}\backslash\texttt{label}\{\text{etiqueta}\}$$
+Con ello solo tocaría escribir el comando $\backslash\texttt{pageref}\{\text{etiqueta}\}$ en el lugar donde deberiamos hacer ``click''.
+\end{alertblock}
+\end{frame}
+
+\begin{frame}{\bf ¿Cómo generar hyperlinks?}
+\begin{alertblock}{\bf Direccionar ecuaciones}
+De igual manera cuando generemos una ecuación enumerada esta debe también estar etiquetada de la siguiente manera:
+$$\backslash\texttt{begin}\{\text{equation}\}\color{red}\backslash\texttt{label}\{\text{eq:1}\}$$
+Con ello solo tocaría escribir el comando $\backslash\texttt{pageref}\{\text{eq:1}\}$ en el lugar donde necesitemos que nos redirija a dicha ecuación.
+\end{alertblock}
+
+\begin{alertblock}{\bf ¿Y los links?}
+Tenemos dos formas de poner dirigirnos a un link, ya sea clickeando un texto en específico:
+$$\backslash\texttt{href}\{\text{Enlace}\}\{\text{Texto}\}$$
+O directamente usando $$\backslash\texttt{url}\{\text{Enlace}\}$$
+\end{alertblock}
+\end{frame}
+
+
+\end{document}

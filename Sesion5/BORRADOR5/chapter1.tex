@@ -1,0 +1,102 @@
+\part{Introducción al \LaTeX}
+\section{Escritura}\label{introduccion}
+La teoría de la relatividad especial, también llamada teoria de la\linebreak relatividad restringida, es una teoría de la física publicada en 1905 por Albert Einstein. Surge de la observación de que la velocidad de la luz en el vacío es igual en todos los sistemas de referencia inerciales y de obtener todas las consecuencias del principio de {\it \large relatividad de Galileo}. 
+
+\section{Que es \LaTeX}
+Su código abierto permitió que muchos usuarios realizasen nuevas utilidades que extendiesen sus capacidades con objetivos muy variados, a veces ajenos a la intención con la que fue creado: aparecieron diferentes dialectos de LaTeX que, a veces, eran incompatibles entre sí. Para atajar este problema, en 1989 Lamport y otros desarrolladores iniciaron el llamado «Proyecto LaTeX3». En el otoño boreal de 1993 se anunció una reestandarización completa de LaTeX, mediante una nueva versión que incluía la mayor parte de estas extensiones adicionales (como la opción para escribir transparencias o la simbología de la American Mathematical Society) con el objetivo de dar uniformidad al conjunto y evitar la fragmentación entre versiones incompatibles de LaTeX 2.09.
+
+\section{Relatividad}
+Según el, cualquier experimento realizado en un sistema de {\sc referencia} \linebreak {\sc inercial} se desarrollara de manera idéntica en cualquier otro sistema inercial. Información que aparecerá en la página.\begin{enumerate}
+\item Primera sesión de \LaTeX.
+\item Semana libre
+\item Segunda sesión de \LaTeX.\begin{enumerate}
+	\item Primera sesión de \LaTeX.
+	\item Segunda sesión de \LaTeX.\begin{enumerate}
+	\item Primera sesión de \LaTeX.
+	\item Segunda sesión de \LaTeX.\begin{enumerate}
+	\item Primera sesión de \LaTeX.
+	\item Segunda sesión de \LaTeX.
+	\item Tercer sesión de \LaTeX.
+\end{enumerate}
+	\item Tercer sesión de \LaTeX.
+\end{enumerate}
+	\item Tercer sesión de \LaTeX.
+\end{enumerate}
+\item Tercer sesión de \LaTeX.
+\end{enumerate}
+
+\begin{itemize}
+	\item Primera sesión de \LaTeX.
+	\item Señale verdadero o falso.\begin{itemize}
+	\item Primer enunciado
+	\item[$\star$] Segundo enunciado
+	\item Tercer enunciado
+	\end{itemize}
+	\item Tercer sesión de \LaTeX.
+\end{itemize}
+
+Tengo 35 \$, $\o$
+ 
+\begin{center}
+\shadowbox{$P=50\,\textsc{atm}$}
+\end{center}
+
+\begin{equation}
+\label{Atmos}
+P=50~\text{atm}
+\end{equation}
+
+\subsection{Tipos de escritura}
+\subsubsection*{Párrafo}
+
+\begin{itemize}
+\item Si yo uso \texttt{textbf}\{\text{texto}\}, lo que este dentro se pondrá en negrita:\\``\textbf{texto}''
+
+\item Si yo uso \texttt{textit}\{\text{texto}\}, lo que este dentro se pondrá en cursiva:\\``\textit{texto}''
+
+\item Si yo uso \texttt{textsc}\{\text{texto}\}, lo que este dentro se pondrá todo en\linebreak mayuscula:\\``\textsc{texto}''
+
+\item Si yo uso \texttt{textsf}\{\text{texto}\}, lo que este dentro se pondrá todo en\linebreak mayuscula:\\``\textsf{texto}''
+
+\item Si yo uso \texttt{textsl}\{\text{texto}\}, lo que este dentro se pondrá todo~en~mayuscula~ss:\\``\textsl{texto}''
+
+\end{itemize}
+
+\subsection*{Escritura de formulas}\label{formulas}
+Existen tres formas de escribir formulas:\begin{itemize}
+\item \textbf{Escritura lineal}: Para ello solamente se deben utilizan un símbolo de dolar en cada extremo (\$).\begin{center}
+Ella no te ama $m=\frac{y_2-y_1}{x_2-x_1}$, me fue infiel
+\end{center}
+
+
+\item \textbf{Escritura centrada}: Para ello se deben utilizan doble símbolo de dolar en cada extremo (\$\$).\\[0.2cm]
+No olvidar que la función de onda se escribe: $$\Psi(r,\theta,\phi)=R(r)\Theta (\theta,\phi)$$ La parte angular tiene solución con \textbf{armónicos esféricos}
+
+\item \textbf{Escritura enumerada}: Para ello debemos usar el comando \texttt{begin}\{\text{equation}\}\\[0.2cm]
+Según $\cdots$, la ecuación fundamental de la termodinámica es:\begin{equation}
+T\text{d}S=\text{d}U+p\text{d}V-\mu\text{d}N
+\end{equation}
+$$\text{d}S=\frac{\text{d}U}{T}+\frac{p\text{d}V}{T}-\frac{\mu\text{d}N}{T}$$
+\end{itemize}
+
+\section{Matrices}\label{matriz}
+Segun De La Peña \cite{DLP} y Muñoz \cite{MJM}
+\subsection*{Vectores}
+$$\vec{v}=\textbf{v}=\begin{pmatrix}
+a_{11} \\ a_{12} \\ a_{13} \\ \vdots \\ a_{1n}
+\end{pmatrix}$$
+
+$$\vec{v}=\textbf{v}=\begin{vmatrix}
+a_{11} \\ a_{12} \\ a_{13} \\ \vdots \\ a_{1n}
+\end{vmatrix}$$
+
+\subsection*{Matrices}
+$$A=\begin{pmatrix}
+a_{11} & a_{21} & a_{31} & \hdots & a_{m1} \\
+a_{12} & a_{22} & a_{32} & \hdots & a_{m2} \\
+a_{13} \\
+\vdots \\
+a_{1n}
+\end{pmatrix}$$
+
+Como se pudo ver en la pagina \pageref{formulas} indicamos las formas es escribir las ecuaciones. Y la solución final la pudimos ver en la pagina \pageref{Atmos}. La lista de asistencia aparece \href{https://forms.gle/84VyN2QJq7twTHH87}{haciendo click aqui}

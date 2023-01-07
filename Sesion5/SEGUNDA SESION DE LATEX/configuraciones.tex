@@ -1,0 +1,108 @@
+%%%%%%%% Title slide details %%%%%%%%%%%%%%
+
+
+% Background Image
+\newcommand{\myBackround}
+{
+    \includegraphics[width=\paperwidth]{Background.png}
+}
+
+% Title
+\newcommand{\myTitle}
+{
+    Entorno visual de un documento en \LaTeX
+}
+
+% Subtitle
+\newcommand{\mySubTitle}
+{
+    Semana 2 $-$ Taller de \LaTeX 2022-II
+}
+
+% Author
+\newcommand{\myAuthor}   
+{
+    Flores Quiliche, Fernando
+}
+
+% Affiliation
+\newcommand{\myAffiliate}
+{
+    Universidad Nacional del Callao $-$ Facultad de Ciencias Naturales y Matemática
+}
+
+% Presentation Date
+\newcommand{\myDate}   
+{
+    Setiembre 24, 2022
+}
+
+% Logo 1
+\newcommand{\myLogoA}   
+{
+    \includegraphics[width=1.35cm]{Logo1.png}
+}
+
+% Logo 2
+\newcommand{\myLogoB}   
+{
+    \includegraphics[width=1.35cm]{Logo2.png}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%% Title slide code %%%%%%%%%%%
+\begin{tikzpicture}[remember picture,overlay]
+
+% Background image
+\node[above right,inner sep=0pt] at (current page.south west)
+    {
+        \myBackround
+    };
+    
+% Title & Subtitle
+\node
+[
+    above=0.5cm,
+    align=center,
+    fill=red!60!gray,
+    text=white,
+    rounded corners,
+    inner xsep=15pt,
+    inner ysep=10pt, 
+    minimum width=0.7\textwidth,
+    text width=0.6\textwidth
+] (title) at (current page.center)
+{
+    \bf\LARGE \myTitle  \\[5pt]
+    \small \mySubTitle
+};
+
+% Author 
+\node[ below=0.5cm] (author) at (title.south){\myAuthor};
+
+% Author 
+\node[ below=0.1cm] (affiliate) at (author.south){\small \myAffiliate};
+
+% Date
+\node[below=0.25cm] (date) at (affiliate.south){\large \myDate};
+
+% Logo A
+\node
+[
+    below right =0.25cm and 0.5cm
+] at (current page.north west)
+{
+    \myLogoA
+};
+
+% Logo B
+\node
+[
+    below left =0.25cm and 0.5cm
+] at (current page.north east)
+{
+    \myLogoB
+};
+
+\end{tikzpicture}

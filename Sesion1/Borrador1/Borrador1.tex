@@ -1,0 +1,106 @@
+
+% Preamble
+\documentclass[12pt,a4paper]{book} % Libro
+\usepackage[utf8]{inputenc} %
+\usepackage{fontenc} %
+\usepackage{xcolor} % Color
+\usepackage{amsmath} %
+\usepackage{amsfonts} %
+\usepackage{amssymb} %
+\usepackage[spanish]{babel} % Idioma
+
+
+% Document
+\begin{document}
+
+  %% Chapter 1
+    \chapter{Introducción al \LaTeX}
+     
+     %%% Section 1.1
+        \section{Escritura}
+             Existen:
+         
+         %%%% Subsection 1.1.1    
+             \subsection*{Tipos de escritura}
+         
+              \begin{itemize}
+                \item Si yo uso \texttt{textbf}\{\text{texto}\}, lo
+                que este dentro se pondrá en negrita:
+                \``\textbf{texto}''
+
+                \item Si yo uso \texttt{textit}\{\text{texto}\}, lo
+                que este dentro se pondrá en cursiva:
+                \``\textit{texto}''
+           
+                \item Si yo uso \texttt{textsc}\{\text{texto}\}, lo
+                que este dentro se pondrá todo en mayuscula
+                \``\textsc{texto}''
+
+                \item Si yo uso \texttt{textsf}\{\text{texto}\}, lo
+                que este dentro se pondrá todo en mayuscula
+                \``\textsf{texto}''
+           
+                \item Si yo uso \texttt{textsl}\{\text{texto}\}, lo
+                que este dentro se pondrá todo en mayuscula
+                \``\textsl{texto}''
+              \end{itemize}
+
+         %%%% Subsection 1.1.2
+         \subsection*{Escritura de formulas}
+           Existen tres formas de escribir formulas:\begin{itemize}
+           \item \textbf{Escritura lineal}: Para ello solamente se
+           deben utilizan un símbolo de dolar en cada extremo (\$).     
+           
+           \begin{center}
+              Ella no te ama $m=\cfrac{y_2-y_1}{x_2-x_1}$, me fue
+              infiel
+          \end{center}
+
+          \item \textbf{Escritura centrada}: Para ello se deben
+          utilizan doble símbolo de dolar en cada extremo (\$\$).
+          \\[0.2cm] No olvidar que la función de onda se escribe: $$
+          \Psi(r,\theta,\phi)=R(r)\Theta (\theta,\phi)$$ La parte
+          angular tiene solución con \textbf{armónicos esféricos}
+
+          \item \textbf{Escritura enumerada}: Para ello debemos usar
+          el comando \texttt{begin}\{\text{equation}\}\\[0.2cm]
+          Según $\cdots$, la ecuación fundamental de la termodinámica
+          es:\begin{equation}
+          T\text{d}S=\text{d}U+p\text{d}V-\mu\text{d}N
+          \end{equation}
+          $$\text{d}S=\frac{\text{d}U}{T}+\frac{p\text{d}V}{T}
+          \frac{\mu\text{d}N}{T}$$
+          \end{itemize}
+          
+     %%% Section 1.2
+         \section{Matrices}
+         
+         %%%% Subsection 1.2.1
+             \subsection*{Vectores}
+               $$\vec{v}=\textbf{v}=
+               \begin{pmatrix}
+                 a_{11} \\ a_{12} \\ a_{13} \\ \vdots \\ a_{1n}
+               \end{pmatrix}$$
+               $$\vec{v}=\textbf{v}=
+               \begin{vmatrix}
+                 a_{11} \\ a_{12} \\ a_{13} \\ \vdots \\ a_{1n}
+              \end{vmatrix}$$
+
+         %%%% Subsection 1.2.2
+             \subsection*{Matrices}
+               $$A=
+               \begin{pmatrix}
+                  a_{11} & a_{21} & a_{31} & \hdots & a_{m1} \\
+                  a_{12} & a_{22} & a_{32} & \hdots & a_{m2} \\
+                  a_{13} \\
+                  \vdots \\
+                  a_{1n}
+              \end{pmatrix}$$
+
+
+\end{document}
+
+
+
+
+

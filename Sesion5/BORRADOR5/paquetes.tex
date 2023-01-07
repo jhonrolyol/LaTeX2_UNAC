@@ -1,0 +1,89 @@
+\usepackage[utf8]{inputenc}
+\usepackage{fontenc}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{anysize}
+\usepackage{setspace}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{subfigure}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+\usepackage{fancybox}
+\usepackage{titlesec}
+
+\marginsize{3.50cm}{2.50cm}{3.00cm}{3.00cm}
+\setlength{\parindent}{8mm}
+\doublespace
+\newtheorem{theorem}{Teorema}[section]
+\newtheorem{corollary}{Corolario}[theorem]
+\newtheorem{lemma}[theorem]{Lema}
+\theoremstyle{definition}
+\newtheorem{definition}{Definición}[section]
+\theoremstyle{remark}
+\newtheorem*{remark}{Comentario}
+
+\title{Taller de \LaTeX}
+\author{Autor 1\and Autor 2}
+\date{\today}
+
+%Mis Comandos
+\newcommand{\norma}[1]{\left\|#1\right\|}
+\newcommand{\braket}[2]{\left<#1|#2 \right>}
+
+%Modificación de las enumeraciones
+\renewcommand{\theenumi}{\arabic{enumi}}
+\renewcommand{\theenumii}{\Alph{enumii}}
+\renewcommand{\theenumiii}{\alph{enumiii}}
+\renewcommand{\theenumiv}{\roman{enumiv}}
+
+\renewcommand{\labelenumi}{{\theenumi}.}
+\renewcommand{\labelenumii}{{\theenumii}.}
+\renewcommand{\labelenumiii}{{\theenumiii})}
+\renewcommand{\labelenumiv}{{\theenumiv}.}
+
+%colores
+\definecolor{titulos}{rgb}{0.5, 0.0, 0.0}
+
+%Instrucciones para las columnass
+\setlength{\columnsep}{0.7cm} %La separacion de las columnas
+\setlength{\columnseprule}{1pt} %Dibuja una linea entre las columnas
+\def\columnseprulecolor{\color{titulos}}
+
+\newcommand{\abs}[1]{\lvert#1\rvert}
+
+
+%Personalizacion del documento
+\fancyhead[L]{Dinámica No Lineal}
+\fancyhead[C]{}
+\fancyhead[R]{\leftmark}
+\fancyfoot[L]{Informe N°1}
+\fancyfoot[C]{\thepage}
+\fancyfoot[R]{Flores Q., F.}
+
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\footrulewidth}{2pt}
+
+%Caratula
+\fancypagestyle{plain}{
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{}
+
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+}
+
+%Formato de titulo
+\titleformat{\section}[display]{\center\bf\itshape}{SECCIÓN \thesection.}{2pt}{\Large\bf\shadowbox}
+
+
+\pagestyle{fancy}

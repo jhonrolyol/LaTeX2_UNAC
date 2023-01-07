@@ -1,0 +1,164 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage[T1]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage{makeidx}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{cite}
+\usepackage{lmodern}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{xfrac}
+\usepackage{fix-cm}
+\usepackage{titlesec}
+\usepackage{setspace}
+\usepackage{fancyhdr}
+
+\renewcommand{\thesection}{\Roman{section}}
+\renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
+\AtBeginDocument{\renewcommand{\contentsname}{ÍNDICE}}
+\onehalfspace
+\titleformat{\section}
+{\bfseries\large}
+{\large\thesection. }
+{1pt}
+{}
+
+%Personalizacion del documento
+\fancyhead[L]{}
+\fancyhead[C]{}
+\fancyhead[R]{}
+\fancyfoot[L]{}
+\fancyfoot[C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+\graphicspath{{imagenes/}}
+\usepackage[left=3.5cm,right=2.5cm,top=3cm,bottom=3cm]{geometry}
+
+\setlength{\parindent}{0cm}
+
+\begin{document}
+\pagestyle{empty}
+\begin{titlepage}
+	\begin{center}
+		{\textbf{UNIVERSIDAD NACIONAL DEL CALLAO}}\\
+		{\textbf{FACULTAD DE CIENCIAS NATURALES Y MATEMÁTICA}}\\
+		{\textbf{ESCUELA PROFESIONAL DE FÍSICA}}\\
+		\vspace{2cm}
+		\begin{figure}[h]
+			\centering
+			\includegraphics[height=7cm]{imagenes/logounac}
+		\end{figure}
+		\vspace{1cm}
+		{\bf PROYECTO DE INVESTIGACIÓN}\\
+		\vspace{2mm}
+		\begin{center}
+			{\textbf{``TITULO: DE LA TESIS''}}
+		\end{center}
+
+		\vspace{15mm}
+		{NOMBRES Y APELLIDOS}\\
+		\vspace{4mm}
+		{LINEA DE INVESTIGACIÓN: INDICAR}\\
+
+	\vspace{16mm}
+	{CALLAO, 2022}\\
+	\vspace{2mm}
+	{PERÚ}
+	\end{center}
+\end{titlepage}
+
+\newpage
+\begin{center}
+\bf \large INFORMACIÓN BÁSICA
+\end{center}
+\textbf{FACULTAD}: CIENCIAS NATURALES Y MATEMÁTICA\\[0.4cm]
+
+\textbf{UNIDAD DE INVESTIGACIÓN}: FACULTAD DE CIENCIAS NATURALES Y MATEMÁTICA\\[0.4cm]
+
+\textbf{TITULO}: DE LA TESIS\\[0.4cm]
+
+\textbf{AUTOR}: NOMBRE Y APELLIDO / CODIGO ORCID / DNI\\[0.4cm]
+
+\textbf{ASESOR}:\\[0.4cm]
+
+\textbf{LUGAR DE EJECUCIÓN}: LUGAR.\\[0.4cm]
+
+\textbf{UNIDADES DE ANÁLISIS}: UNIDADES.\\[0.4cm]
+
+\textbf{TIPO DE INVESTIGACIÓN}: TIPO\\[0.4cm]
+
+\textbf{LÍNEA DE INVESTIGACIÓN}: ÁREA\\[0.4cm]
+
+\newpage
+\setcounter{page}{1}
+\pagestyle{fancy}
+\tableofcontents
+
+\newpage
+%\listoffigures
+
+\section*{INTRODUCCIÓN}
+\addcontentsline{toc}{section}{INTRODUCCIÓN}
+dsadas
+
+\newpage
+\section{PLANTEAMIENTO DEL PROBLEMA}
+\subsection{Descripción de la realidad problemática}
+sdadasdf
+
+\newpage
+
+\subsection{Formulación del problema}
+\subsubsection{Problema General}
+asfadfsad
+\subsubsection{Problemas Específicos}
+asfadfsad
+\subsection{Objetivos}
+\subsubsection{Objetivo General}
+asfadfsad
+\subsubsection{Objetivos Específicos}
+asfadfsad
+
+\newpage
+\subsection{Justificación}
+asfadfsad
+\subsection{Delimitantes de la investigación}
+asfadfsad
+
+\newpage
+\section{MARCO TEÓRICO}
+\subsection{Antecedentes}
+sdadasdf
+\subsection{Bases teóricas}
+asfadfsad
+\subsection{Marco conceptual}
+sdadasdf
+\subsection{Definición de términos básicos}
+asfadfsad
+
+\newpage
+\section{HIPÓTESIS Y VARIABLES}
+\subsection{Hipótesis}
+sdadasdf
+\subsection{Operacionalización de variable}
+asfadfsad
+
+
+\newpage
+\section{REFERENCIAS BIBLIOGRÁFICAS}
+\bibliographystyle{apa}
+\begin{thebibliography}{4}
+\bibitem{C1} Cita
+
+
+\end{thebibliography}
+\end{document}
